@@ -1,0 +1,72 @@
+<div class="form-horizontal">
+  <fieldset>
+    <legend>2. Other Charity Spending</legend>
+    <section class="col-sm-12 research_blurb">
+      <p> The AMRC subscription is not levied on </p>
+      <ul>
+        <li> (B) funding for research overseas</li>
+        <li> (C or D) grants made for buildings and capital projects above £50,000</li>
+        <li> (E) on other non-medical research charitable activities </li>
+      </ul>
+      <p>However, this data helps us to track the wider funding picture, and understand the part that UK research plays in the charity’s work. </p>
+    </section>
+    <div class="form-group">
+      <label for="research_overseas" class="col-sm-5 control-label">Research Overseas</label>
+      <div class="col-sm-5">
+        <div class="input-group">
+          <span class="input-group-addon">£</span>
+          <%= form.text_field :spending_research_overseas, class: 'form-control', columns: 5 %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="uk_capital_projects" class="col-sm-5 control-label">UK Capital Projects* <br> <div class="sublabel">(Capital is defined as major capital expenditure above £50,000)</div></label>
+      <div class="col-sm-5">
+        <div class="input-group">
+          <span class="input-group-addon">£</span>
+          <%= form.text_field :spending_uk_capital_projects, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="overseas_capital_projects" class="col-sm-5 control-label">Overseas Capital Projects*</label>
+      <div class="col-sm-5">
+        <div class="input-group">
+          <span class="input-group-addon">£</span>
+          <%= form.text_field :spending_overseas_capital_projects, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="brief_description_of_capital_projects" class="col-sm-5 control-label">Brief Description Of Capital Projects*</label>
+      <div class="col-sm-5">
+        <%= form.text_area :spending_brief_of_capital_projects, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="other_non-medical_research_charitable_activities" class="col-sm-5 control-label">
+        Other Non-Medical Research Charitable Activities
+        <br>
+        <div class="sublabel">(eg welfare, support, care, education, information)</div>
+      </label>
+      <div class="col-sm-5">
+        <div class="input-group">
+          <span class="input-group-addon">£</span>
+          <%= form.text_field :spending_other_non_medical_research_charitable_activities, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <section class="footnotes">
+      <p>*Capital is defined as major capital expenditure above £50,000.</p>
+    </section>
+  </fieldset>
+  <div class="tab-pane active row" id="othercharityspending"><br>
+  <a class="btn btn-primary btnPrevious col-sm-offset-3">Previous</a>
+  <a class="btn btn-primary btnNext">Next</a><br><br>
+</div>
+</div>

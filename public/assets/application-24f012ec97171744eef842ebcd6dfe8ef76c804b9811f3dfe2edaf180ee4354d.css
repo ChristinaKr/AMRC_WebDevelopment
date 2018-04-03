@@ -1,0 +1,952 @@
+/* Global styles
+------------------------------------*/
+
+body {
+        /*font: 100% "Century Gothic", Helvetica, sans-serif;*/
+        font:13px/1.5 Verdana,Helvetica,Arial,sans-serif;
+        color: #6d6f71;
+        background-color: white;
+       /*border: 1px solid rgb(0,143,197); */
+        margin: 0;
+        height: 100%;
+}
+div{
+  /*height: auto;
+  min-height: 100%*/
+}
+
+html {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        height: 100%;
+}
+
+a {
+        color: white;
+        font-style: bold;
+        padding: 10px;
+}
+
+a:hover {
+    color: rgb(227,111,30);
+}
+
+.content-wrap {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.wrapperforstickyfooter {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -60px;
+}
+
+.push{
+  height:60px
+}
+
+
+/* Header & Footer
+------------------------------------*/
+
+header, footer {
+    background-color: rgb(0,143,197);
+    line-height:150%;
+    font-weight: normal;
+    /*border-bottom-width:10px;
+    border-bottom-color: black;*/
+    /*padding-top: -10px;*/
+}
+
+/* Header */
+.logo {
+    width: 250px;
+    margin-left:-30px;
+}
+header{
+    font: 120% "Century Gothic", Verdana, sans-serif;
+    margin-bottom: 40px;
+    text-align: left;
+    font-weight:normal;
+}
+
+/*Label of the logout and contact us buttons for login pages*/
+
+.logoutbtn {
+      float: right;
+      border: none;
+      background: rgb(0,143,197);
+      color: white;
+      font-size: 1em;
+      padding: 5px 10px;
+      margin-top:-200px;
+      font-weight: normal;
+    }
+.contactbtn {
+      float: right;
+      border: none;
+      background: rgb(0,143,197);
+      color: white;
+      font-size: 1em;
+      padding: 5px 10px;
+      margin-top:-200px;
+      margin-right:130px;
+}
+.logoutbtn:hover, .logoutbtns:hover, .contactbtn:hover, .contactbtns:hover{
+      color: rgb(227,111,30);
+      cursor: pointer;
+}
+
+/*Label of the logout and contact us buttons for general pages*/
+.logoutbtns {
+      float:right;
+      border:none;
+      background: rgb(0,143,197);
+      color: white;
+      font-size: 1em;
+      font-weight: normal;
+      padding-top:30px;
+      padding-right: 15px;
+      margin-right:0;
+      margin-bottom:0;
+    }
+
+.contactbtns {
+      float:right;
+      border: none;
+      background: rgb(0,143,197);
+      color: white;
+      font-size: 1em;
+      padding-top:30px;
+      padding-right: 10px;
+      margin-right:40px;
+      margin-bottom:0;
+    }
+
+.material-icons{
+  color:white;
+  float:right;
+}
+
+/*Logout and contact us icons for login page*/
+#logout-icon{
+  margin-top:-200px;
+  margin-right:70px;
+}
+#contact-icon{
+  margin-top:-200px;
+  margin-right:225px;
+}
+
+/*Logout and contact us icons for general pages*/
+#logout-icons, #contact-icons{
+  margin-top:25px;
+  margin-right:0px;
+  margin-bottom:0;
+  padding-bottom:0;
+}
+
+/* Footer */
+/*Delete position, bottom, etc for stickyfooter*/
+footer {
+  height: 60px;
+  color: white;
+  text-align: justify;
+  /*margin:0 auto;
+  border:0 auto;*/
+  padding-bottom:15px;
+}
+
+
+/* Individual pages
+------------------------------------*/
+
+/* Log in Page */
+
+h1{
+        font-size: 2em;
+        font-style: normal;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+    }
+
+.description{
+        font-size: 1em;
+        line-height: 1.5;
+        text-align: center;
+        width: 1100px;
+        margin: auto;
+    }
+.heading {
+  font-size: 2.5em;
+  margin-top: -10px;
+}
+.header-login {
+  height: 200px;
+}
+.db-login {
+  height: 150px;
+}
+
+ /* Dashboard Charity Member */
+
+.button-group{
+  display:flex;
+  position:absolute;
+  right:7%;
+  top:100px;
+
+  /*position:relative;
+  left: 55%;
+  right: 0%;
+  top:20%;*/
+}
+
+.buttonDB, .buttonREP, .buttonEDIT {
+    background: rgb(234,235,235);
+    color: rgb(109,111,113);
+    text-decoration: none;
+    height: 50px;
+    width: 180px;
+    display: inline-block;
+    text-align: center;
+    border-top: 8px solid rgb(227,111,30);
+    position:relative;
+    right:40px;
+    top:20px;
+    font:13px/1.5 Verdana,Helvetica,Arial,sans-serif;
+    margin-right: 5px;
+}
+.buttonREP {
+    border-top: 8px solid rgb(225,37,134);
+}
+.buttonEDIT {
+    border-top: 8px solid rgb(110,25,112);
+}
+
+.buttonDB:hover{
+  background-color: rgb(252,244,237);
+  color: rgb(215,117,54);
+  cursor: pointer;
+}
+.buttonREP:hover{
+  background-color: rgb(252,244,246);
+  color: rgb(208,61,132);
+  cursor: pointer;
+}
+.buttonEDIT:hover{
+  background-color: rgb(238,235,242);
+  color: rgb(100,37,108);
+  cursor: pointer;
+}
+
+.dash-data {
+  max-height: 400px;
+  width: 95%;
+  margin: auto;
+}
+
+.research-data {
+  float:left;
+  width:60%;
+  height: 190px;
+  background-color:darkgray;
+}
+
+.grant-data {
+  background-color:darkgray;
+  float:left;
+  width: 60%;
+  height: 190px;
+}
+
+.dash-subtitle {
+  color: black;
+  font-size: 150%;
+  margin: 1%;
+  border: 1%;
+}
+
+.key-statistics {
+  float:right;
+  width:39%;
+  height:300px;
+  background-color:darkgray;
+}
+
+.dash-info {
+  font-size: 100%;
+  text-align: center;
+}
+
+.data-pie {
+  float: left;
+  width: 50%;
+  background-color: lightgray;
+  height: 90%;
+}
+
+.category-chart {
+  float: right;
+  width: 50%;
+  background-color: lightgray;
+  height: 90%;
+}
+
+.stats-info {
+  font-size: 50%;
+  text-align: center;
+  background-color: lightgray;
+  width: 95%;
+  height: 5%;
+  margin: auto;
+}
+
+.stat {
+  color: orange;
+  font-size: 2.5em;
+  text-align: center;
+  margin: auto;
+  background-color: lightgray;
+  width: 95%;
+}
+
+/*Download Page*/
+.downloadtext{
+  font: 13px Verdana,Helvetica,Arial,sans-serif;
+  /*font-weight: bold;*/
+  color: RGB(112,112,112);
+  font-size:18px;
+  text-align:center;
+  padding: 5px;
+}
+
+.downloadtext:hover,.edittext:hover{
+  color: rgb(227,111,30);
+  cursor: pointer;
+}
+#download-icon{
+  font-size:80px;
+}
+#edit-icon{
+  font-size:50px;
+  padding:10px;
+}
+
+.edittext{
+  font: 13px Verdana,Helvetica,Arial,sans-serif;
+  /*font-weight: bold;*/
+  color: RGB(112,112,112);
+  font-size:18px;
+  text-align:center;
+  padding: 5px;
+  font-weight:bold;
+}
+
+.container-border{
+  border-style:solid; /* or ridge? */
+  border-color: rgb(0,143,197);
+  border-width:3px;
+  padding: 5px;
+  min-height:120px;
+  display:flex;
+  align-items:center;
+  /*margin-bottom: 10px;*/
+  margin-top: 10px;
+}
+
+/*Research expenditure*/
+.research_blurb {
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: whitesmoke;
+  margin-bottom: 20px;
+}
+
+.radio-auditing {
+  background-color: lightgray;
+  margin-left: 30px;
+}
+
+.form-blurb {
+  text-align: left;
+  font-size: 15px;
+  margin-top: 0px;
+}
+
+.research-sub-title {
+  color: lightgray;
+}
+
+.research-submit {
+  margin-top: 10px;
+}
+
+.footnotes {
+  font-size: 0.75em;
+}
+
+.subLabelOther {
+  font-size: 0.75em;
+  color: slategray;
+}
+
+.tab-content .btnNext, .tab-content .btnPrevious{
+  position: absolute;
+  bottom: 10px
+}
+
+.tab-content .btnNext{
+  right: 10%;
+}
+
+.tab-control .previous-button {
+  left: 10%;
+}
+
+.nav-pills a{
+color: rgb(0,143,197);
+}
+/* line 1, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 10, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 29, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 39, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 44, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 49, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 53, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 59, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 66, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 76, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 82, /Users/nedlloyd/Documents/GitHub/Team8_AMRC/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* Global styles
+------------------------------------*/
+
+body {
+        /*font: 100% "Century Gothic", Helvetica, sans-serif;*/
+        font:13px/1.5 Verdana,Helvetica,Arial,sans-serif;
+        color: #6d6f71;
+        background-color: white;
+       /*border: 1px solid rgb(0,143,197); */
+        margin: 0;
+        height: 100%;
+}
+div{
+  /*height: auto;
+  min-height: 100%*/
+}
+
+html {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        height: 100%;
+}
+
+a {
+        color: white;
+        font-style: bold;
+        padding: 10px;
+}
+
+a:hover {
+    color: rgb(227,111,30);
+}
+
+.content-wrap {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.wrapperforstickyfooter {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -60px;
+}
+
+.push{
+  height:60px
+}
+
+
+/* Header & Footer
+------------------------------------*/
+
+header, footer {
+    background-color: rgb(0,143,197);
+    line-height:150%;
+    font-weight: normal;
+    /*border-bottom-width:10px;
+    border-bottom-color: black;*/
+    /*padding-top: -10px;*/
+}
+
+/* Header */
+.logo {
+    width: 250px;
+    margin-left:-30px;
+}
+header{
+    font: 120% "Century Gothic", Verdana, sans-serif;
+    margin-bottom: 40px;
+    text-align: left;
+    font-weight:normal;
+}
+
+/*Label of the logout and contact us buttons for login pages*/
+
+.logoutbtn {
+      float: right;
+      border: none;
+      background: rgb(0,143,197);
+      color: white;
+      font-size: 1em;
+      padding: 5px 10px;
+      margin-top:-200px;
+      font-weight: normal;
+    }
+.contactbtn {
+      float: right;
+      border: none;
+      background: rgb(0,143,197);
+      color: white;
+      font-size: 1em;
+      padding: 5px 10px;
+      margin-top:-200px;
+      margin-right:130px;
+}
+.logoutbtn:hover, .logoutbtns:hover, .contactbtn:hover, .contactbtns:hover{
+      color: rgb(227,111,30);
+      cursor: pointer;
+}
+
+/*Label of the logout and contact us buttons for general pages*/
+.logoutbtns {
+      float:right;
+      border:none;
+      background: rgb(0,143,197);
+      color: white;
+      font-size: 1em;
+      font-weight: normal;
+      padding-top:30px;
+      padding-right: 15px;
+      margin-right:0;
+      margin-bottom:0;
+    }
+
+.contactbtns {
+      float:right;
+      border: none;
+      background: rgb(0,143,197);
+      color: white;
+      font-size: 1em;
+      padding-top:30px;
+      padding-right: 10px;
+      margin-right:40px;
+      margin-bottom:0;
+    }
+
+.material-icons{
+  color:white;
+  float:right;
+}
+
+/*Logout and contact us icons for login page*/
+#logout-icon{
+  margin-top:-200px;
+  margin-right:70px;
+}
+#contact-icon{
+  margin-top:-200px;
+  margin-right:225px;
+}
+
+/*Logout and contact us icons for general pages*/
+#logout-icons, #contact-icons{
+  margin-top:25px;
+  margin-right:0px;
+  margin-bottom:0;
+  padding-bottom:0;
+}
+
+/* Footer */
+/*Delete position, bottom, etc for stickyfooter*/
+footer {
+  height: 60px;
+  color: white;
+  text-align: justify;
+  /*margin:0 auto;
+  border:0 auto;*/
+  padding-bottom:15px;
+}
+
+
+/* Individual pages
+------------------------------------*/
+
+/* Log in Page */
+
+h1{
+        font-size: 2em;
+        font-style: normal;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+    }
+
+.description{
+        font-size: 1em;
+        line-height: 1.5;
+        text-align: center;
+        width: 1100px;
+        margin: auto;
+    }
+.heading {
+  font-size: 2.5em;
+  margin-top: -10px;
+}
+.header-login {
+  height: 200px;
+}
+.db-login {
+  height: 150px;
+}
+
+ /* Dashboard Charity Member */
+
+.button-group{
+  display:flex;
+  position:absolute;
+  right:7%;
+  top:100px;
+
+  /*position:relative;
+  left: 55%;
+  right: 0%;
+  top:20%;*/
+}
+
+.buttonDB, .buttonREP, .buttonEDIT {
+    background: rgb(234,235,235);
+    color: rgb(109,111,113);
+    text-decoration: none;
+    height: 50px;
+    width: 180px;
+    display: inline-block;
+    text-align: center;
+    border-top: 8px solid rgb(227,111,30);
+    position:relative;
+    right:40px;
+    top:20px;
+    font:13px/1.5 Verdana,Helvetica,Arial,sans-serif;
+    margin-right: 5px;
+}
+.buttonREP {
+    border-top: 8px solid rgb(225,37,134);
+}
+.buttonEDIT {
+    border-top: 8px solid rgb(110,25,112);
+}
+
+.buttonDB:hover{
+  background-color: rgb(252,244,237);
+  color: rgb(215,117,54);
+  cursor: pointer;
+}
+.buttonREP:hover{
+  background-color: rgb(252,244,246);
+  color: rgb(208,61,132);
+  cursor: pointer;
+}
+.buttonEDIT:hover{
+  background-color: rgb(238,235,242);
+  color: rgb(100,37,108);
+  cursor: pointer;
+}
+
+.dash-data {
+  max-height: 400px;
+  width: 95%;
+  margin: auto;
+}
+
+.research-data {
+  float:left;
+  width:60%;
+  height: 190px;
+  background-color:darkgray;
+}
+
+.grant-data {
+  background-color:darkgray;
+  float:left;
+  width: 60%;
+  height: 190px;
+}
+
+.dash-subtitle {
+  color: black;
+  font-size: 150%;
+  margin: 1%;
+  border: 1%;
+}
+
+.key-statistics {
+  float:right;
+  width:39%;
+  height:300px;
+  background-color:darkgray;
+}
+
+.dash-info {
+  font-size: 100%;
+  text-align: center;
+}
+
+.data-pie {
+  float: left;
+  width: 50%;
+  background-color: lightgray;
+  height: 90%;
+}
+
+.category-chart {
+  float: right;
+  width: 50%;
+  background-color: lightgray;
+  height: 90%;
+}
+
+.stats-info {
+  font-size: 50%;
+  text-align: center;
+  background-color: lightgray;
+  width: 95%;
+  height: 5%;
+  margin: auto;
+}
+
+.stat {
+  color: orange;
+  font-size: 2.5em;
+  text-align: center;
+  margin: auto;
+  background-color: lightgray;
+  width: 95%;
+}
+
+/*Download Page*/
+.downloadtext{
+  font: 13px Verdana,Helvetica,Arial,sans-serif;
+  /*font-weight: bold;*/
+  color: RGB(112,112,112);
+  font-size:18px;
+  text-align:center;
+  padding: 5px;
+}
+
+.downloadtext:hover,.edittext:hover{
+  color: rgb(227,111,30);
+  cursor: pointer;
+}
+#download-icon{
+  font-size:80px;
+}
+#edit-icon{
+  font-size:50px;
+  padding:10px;
+}
+
+.edittext{
+  font: 13px Verdana,Helvetica,Arial,sans-serif;
+  /*font-weight: bold;*/
+  color: RGB(112,112,112);
+  font-size:18px;
+  text-align:center;
+  padding: 5px;
+  font-weight:bold;
+}
+
+.container-border{
+  border-style:solid; /* or ridge? */
+  border-color: rgb(0,143,197);
+  border-width:3px;
+  padding: 5px;
+  min-height:120px;
+  display:flex;
+  align-items:center;
+  /*margin-bottom: 10px;*/
+  margin-top: 10px;
+}
+
+/*Landing Page - charity member */
+
+.landingPageButton {
+  color: red;
+  width: 40px;
+  margin: auto;
+  overflow:hidden;
+}
+
+
+/*.landingSubText {
+  width 10px;
+}*/
+
+/*Research expenditure - charity member*/
+.research_blurb {
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: whitesmoke;
+  margin-bottom: 20px;
+}
+
+.radio-auditing {
+  background-color: lightgray;
+  margin-left: 30px;
+}
+
+.form-blurb {
+  text-align: left;
+  font-size: 15px;
+  margin-top: 0px;
+}
+
+.research-sub-title {
+  color: lightgray;
+}
+
+.research-submit {
+  margin-top: 10px;
+}
+
+.footnotes {
+  font-size: 0.75em;
+}
+
+.sublabel {
+  font-size: 0.75em;
+  color: slategray;
+}
+
+.tab-content .btnNext, .tab-content .btnPrevious{
+  position: static;
+  bottom: 10px
+}
+
+.tab-content .btnNext{
+  right: 10%;
+}
+
+.tab-control .previous-button {
+  left: 10%;
+}
+
+.nav-pills a{
+color: rgb(0,143,197);
+}

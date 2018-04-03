@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<% if @project.errors.any? %>
+   <div class = "col-sm-offset-1 col-sm-10 error-messages alert alert-danger fade in">
+     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+<% @project.errors.full_messages.each do |message| %>
+<li><%= message %></li>
+<% end %>
+</div>
+<% end %>
+
+
+
+<main>
+  <div class="content-wrap">
+    <div class="content container">
+      <div class="row">
+        <section class="col-sm-12">
+          <div class="col-sm-3 product-tabs">
+            <ul class="nav nav-pills nav-stacked research-tabs" role="tablist">
+              <li role="presetation" class="active"><a role="tab" data-toggle="tab" href="#ukresearchspending">UK Research Spending<i class="fa"></i></a></li>
+              <li role="presetation"><a role="tab" data-toggle="tab" href="#othercharityspending">Other Charity Spending<i class="fa"></i></a></li>
+              <li role="presetation"><a role="tab" data-toggle="tab" href="#totalcharitableactivities">Total Charitable Activities<i class="fa"></i></a></li>
+              <li role="presetation"><a role="tab" data-toggle="tab" href="#estimatedspending">Estimated Spending<i class="fa"></i></a></li>
+              <li role="presetation"><a role="tab" data-toggle="tab" href="#useofdata">Use of Data<i class="fa"></i></a></li>
+              <li role="presetation"><a role="tab" data-toggle="tab" href="#approval">Approval<i class="fa"></i></a></li>
+              <li role="presetation"><a role="tab" data-toggle="tab" href="#contactdetails">Contact Details<i class="fa"></i></a></li>
+            </ul>
+          </div>
+<%= render 'projects/form', project: @project %>
+        </section>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+
+<!-- <%= link_to 'Show', @project %> |
+<%= link_to 'Back', projects_path %> -->

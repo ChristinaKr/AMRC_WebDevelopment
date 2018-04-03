@@ -1,0 +1,155 @@
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+
+  <div class="content-wrap">
+  <div class="container">
+
+    <div class="form-horizontal">
+    <fieldset>
+
+
+      <legend>Add New Charity</legend>
+
+      <% if resource.errors.any? %>
+      <div class = "error-messages alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <% resource.errors.full_messages.each do |message| %>
+
+      <li><%= message %></li>
+
+      <% end %>
+      </div>
+      <% end %>
+
+      <% flash.each do |flash_level, message| %>
+
+    <div class = "alert alert-<%= message.include?('wrong') ? "danger" : "success" %> fade in">
+      <%= message %>
+       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+
+    </div>
+
+    <% end %>
+<div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Organisation Details</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+        <label for="charity_name" class="col-sm-5 control-label">Organisation Name</label>
+        <div class="col-sm-5">
+            <%= f.text_field :charity_name, class: 'form-control', columns: 5, autofocus: true %>
+        </div>
+      </div>
+
+      <div class="form-group">
+      <label for="email" class="col-sm-5 control-label">Email<div class="sublabel new-charity-sub"><em>Used for Login</em></div></label>
+      <div class="col-sm-5">
+        <%= f.email_field :email, class: 'form-control'%>
+      </div>
+    </div>
+
+      <div class="form-group">
+        <label for="res_exp_contact_name" class="col-sm-5 control-label">Research Expenditure Contact Name</label>
+        <div class="col-sm-5">
+            <%= f.text_field :resexp_contact_name, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="res_exp_contact_email" class="col-sm-5 control-label">Research Expenditure Contact Email</label>
+        <div class="col-sm-5">
+          <%= f.text_field :resexp_contact_email, class: 'form-control' %>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="grants_contact_name" class="col-sm-5 control-label">Grant Contact Name</label>
+        <div class="col-sm-5">
+          <%= f.text_field :grants_contact_name, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="grants_contact_email" class="col-sm-5 control-label">Grant Contact Email</label>
+        <div class="col-sm-5">
+          <%= f.text_field :grants_contact_email, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :category, class: 'control-label col-sm-5' %>
+            <div class="col-sm-5">
+          <%= f.select(:category, [['A', 'A'], ['B', 'B'], ['C', 'C'], ['D', 'D'], ['E', 'E']], {:include_blank => true}, {:class => "form-control"}) %>
+      </div>
+    </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Manually set Grant and Research Expenditure forms as submitted</h3>
+  </div>
+  <div class="panel-body">
+    <div class="form-group">
+      <%= f.label "Set Research Expenditure Form as submitted", class: 'control-label col-sm-5' %>
+          <div class="col-sm-5">
+        <%= f.select(:submission_status_resexp, [['Yes', 'true'], ['No', 'false']], {:include_blank => false,}, {:class => "form-control"}) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Set Grant Data form as submitted", class: 'control-label col-sm-5' %>
+        <div class="col-sm-5">
+      <%= f.select(:submission_status_grants, [['Yes', 'true'], ['No', 'false']], {:include_blank => false}, {:class => "form-control"}) %>
+  </div>
+  </div>
+
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Password</h3>
+  </div>
+  <div class="panel-body">
+
+
+  <div class="form-group">
+  <label for="password" class="col-sm-5 control-label">Password</label>
+  <div class="col-sm-5">
+    <% if @minimum_password_length %>
+    <% end %>
+    <% placeholder_password = @minimum_password_length.to_s + " characters minumum length" %>
+    <%= f.password_field :password, class: 'form-control', autocomplete: "off", placeholder: placeholder_password%>
+  </div>
+</div>
+
+<div class="form-group">
+<label for="password_confirmation" class="col-sm-5 control-label">Confirm Password</label>
+<div class="col-sm-5">
+<%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "off", placeholder: placeholder_password %>
+</div>
+</div>
+  </div>
+</div>
+
+<div class="form-buttons">
+  <div class="">
+    <%= f.submit "Submit", :class => "btn btn-primary btn-newchar-bootstrap col-xs-12" %>
+  </div>
+</div>
+
+</div>
+
+
+
+
+</fieldset>
+</div>
+</div>
+</div>
+<% end %>

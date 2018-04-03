@@ -1,0 +1,135 @@
+<%= form_for(@users) do |form| %>
+
+<div class="content-wrap">
+  <div class="container">
+
+  <div class="form-horizontal">
+    <fieldset>
+
+      <% if @users.errors.any? %>
+         <div class = "error-messages alert alert-danger fade in">
+   <% @users.errors.full_messages.each do |message| %>
+     <li><%= message %></li>
+   <% end %>
+      </div>
+ <% end %>
+
+
+
+      <legend>Edit a Charity</legend>
+<div class="row col-sm-12">
+      <%= link_to("Back to Charity Search", {controller: :users, action: :index}, :class => 'back-btn btn btn-primary col-sm-12') %>
+    </div>
+
+      <div class="panel-group row col-sm-12">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Organisation Details</h3>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label for="charity_name" class="col-sm-5 control-label">Organisation Name</label>
+            <div class="col-sm-5">
+                <%= form.text_field :charity_name, class: 'form-control', columns: 5 %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="col-sm-5 control-label">Charity Email<div class="sublabel new-charity-sub"><em>Used for Login</em></div></label>
+            <div class="col-sm-5">
+                <%= form.text_field :email, class: 'form-control', columns: 5 %>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="res_exp_contact_name" class="col-sm-5 control-label">Research Expenditure Contact Name</label>
+            <div class="col-sm-5">
+                <%= form.text_field :resexp_contact_name, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="res_exp_contact_email" class="col-sm-5 control-label">Research Expenditure Contact Email</label>
+            <div class="col-sm-5">
+              <%= form.text_field :resexp_contact_email, class: 'form-control' %>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="grants_contact_name" class="col-sm-5 control-label">Grant Contact Name</label>
+            <div class="col-sm-5">
+              <%= form.text_field :grants_contact_name, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="grants_contact_email" class="col-sm-5 control-label">Grant Contact Email</label>
+            <div class="col-sm-5">
+              <%= form.text_field :grants_contact_email, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :category, class: 'control-label col-sm-5' %>
+                <div class="col-sm-5">
+              <%= form.select(:category, [['A', 'A'], ['B', 'B'], ['C', 'C'], ['D', 'D'], ['E', 'E']], {:selected => @users.category, :include_blank => true}, {:class => "form-control"}) %>
+          </div>
+        </div>
+
+
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Manually set Grant and Research Expenditure forms as submitted</h3>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <%= form.label "Set Research Expenditure Form as submitted", class: 'control-label col-sm-5' %>
+            <div class="col-sm-5">
+          <%= form.select(:submission_status_resexp, [['Yes', 'true'], ['No', 'false']], {:selected => @users.submission_status_resexp, :include_blank => false,}, {:class => "form-control"}) %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label "Set Grant Data form as submitted", class: 'control-label col-sm-5' %>
+          <div class="col-sm-5">
+        <%= form.select(:submission_status_grants, [['Yes', 'true'], ['No', 'false']], {:selected => @users.submission_status_grants, :include_blank => false}, {:class => "form-control"}) %>
+    </div>
+  </div>
+    </div>
+  </div>
+
+  <div class="form-buttons">
+    <div class="">
+      <%= form.submit "Submit", :class => "btn btn-primary btn-newchar-bootstrap col-xs-12" %>
+
+    </div>
+
+      <div class="">
+        <%= link_to("Delete", delete_user_path(@users), :class => 'action delete btn btn-danger col-xs-12') %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    </fieldset>
+
+  </div>
+  </div>
+
+
+  </div>
+
+
+<% end %>

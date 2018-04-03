@@ -1,0 +1,25 @@
+<div class="form-horizontal">
+  <fieldset>
+    <legend>3. Total Charitable Activities</legend>
+    <section class="col-sm-12 research_blurb">
+      <p> This is a request for your total charitable expenditure as listed on your annual report and accounts and should not be confused with your total expenditure.
+      </p>
+    </section>
+
+    <div class="form-group">
+      <label for="total_charitable_expenditure" class="col-sm-5 control-label">Total charitable expenditure (A+B+C+D+E)</label>
+      <div class="col-sm-5">
+        <div class="input-group">
+          <span class="input-group-addon">£</span>
+          <%= form.text_field :total_charitable_expenditure, class: "form-control", columns: 5  %>
+        </div>
+      </div>
+    </div>
+
+  </fieldset>
+  <div class="tab-pane active" id="totalcharityspending"><br>
+  <a class="btn btn-primary btnPrevious">Previous</a>
+  <a class="btn btn-primary btnNext">Next</a><br><br>
+</div>
+
+</div>

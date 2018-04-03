@@ -1,0 +1,116 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Charity name:</strong>
+  <%= @project.charity_name %>
+</p>
+
+<p>
+  <strong>Research spending:</strong>
+  <%= @project.research_spending %>
+</p>
+
+<p>
+  <strong>Financial year:</strong>
+  <%= @project.financial_year %>
+</p>
+
+<p>
+  <strong>Audited account:</strong>
+  <%= @project.audited_account %>
+</p>
+
+<p>
+  <strong>Spending research overseas:</strong>
+  <%= @project.spending_research_overseas %>
+</p>
+
+<p>
+  <strong>Spending uk capital projects:</strong>
+  <%= @project.spending_uk_capital_projects %>
+</p>
+
+<p>
+  <strong>Spending overseas capital projects:</strong>
+  <%= @project.spending_overseas_capital_projects %>
+</p>
+
+<p>
+  <strong>Spending brief of capital projects:</strong>
+  <%= @project.spending_brief_of_capital_projects %>
+</p>
+
+<p>
+  <strong>Spending other non medical research charitable activities:</strong>
+  <%= @project.spending_other_non_medical_research_charitable_activities %>
+</p>
+
+<p>
+  <strong>Total charitable activities:</strong>
+  <%= @project.total_charitable_activities %>
+</p>
+
+<p>
+  <strong>Total charitable expenditure:</strong>
+  <%= @project.total_charitable_expenditure %>
+</p>
+
+<p>
+  <strong>Estimated spending on medical research:</strong>
+  <%= @project.estimated_spending_on_medical_research %>
+</p>
+
+<p>
+  <strong>Estimated spending on medical research year:</strong>
+  <%= @project.estimated_spending_on_medical_research_year %>
+</p>
+
+<p>
+  <strong>Use of data approve graphs:</strong>
+  <%= @project.use_of_data_approve_graphs %>
+</p>
+
+<p>
+  <strong>Use of data share aggreement:</strong>
+  <%= @project.use_of_data_share_aggreement %>
+</p>
+
+<p>
+  <strong>Approval name:</strong>
+  <%= @project.approval_name %>
+</p>
+
+<p>
+  <strong>Approval job title:</strong>
+  <%= @project.approval_job_title %>
+</p>
+
+<p>
+  <strong>Approval description:</strong>
+  <%= @project.approval_description %>
+</p>
+
+<p>
+  <strong>Contact name:</strong>
+  <%= @project.contact_name %>
+</p>
+
+<p>
+  <strong>Contact email:</strong>
+  <%= @project.contact_email %>
+</p>
+
+<p>
+  <strong>Contact description:</strong>
+  <%= @project.contact_description %>
+</p>
+
+<p>
+  <strong>Submit</strong>
+  <%= @project.form.submit %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

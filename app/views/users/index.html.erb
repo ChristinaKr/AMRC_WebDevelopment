@@ -1,0 +1,39 @@
+<div class="choose-charity-page">
+
+<h2 class="choose-edit-charity"> Edit Charity </h2>
+
+<% flash.each do |flash_level, message| %>
+<div class = "col-sm-4 col-sm-offset-4 alert alert-<%= message.include?('wrong') ? "danger" : "success" %> fade in">
+<p><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%= message %></p>
+</div>
+<% end %>
+
+  <div class="dropdown dorpdown-choose-edit col-sm-offset-3">
+    <button class="btn btn-primary dropdown-toggle col-sm-8 edit-drop-btn" type="button" data-toggle="dropdown">Choose Charity
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu menu-choose-edit col-sm-8">
+      <input class="form-control" id="myInput" type="text" placeholder="Search..">
+
+      <% @users.each do |charity| %>
+     <li> <%= link_to(charity.charity_name, edit_user_path(charity), :class => '') %> </li>
+
+         <%end%>
+    </ul>
+  </div>
+
+</div>
+
+
+<script>
+
+
+$(document).ready(function(){
+
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".dropdown-menu li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

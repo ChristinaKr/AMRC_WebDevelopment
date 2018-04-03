@@ -1,0 +1,38 @@
+<div class="form-horizontal">
+  <fieldset>
+    <legend>6. Approval</legend>
+    <section class="col-sm-12 research_blurb">
+      <p>
+        These figures must be approved by your formal representative to AMRC or a treasurer, financial director or chief executive An electronic signature is acceptable.
+      </p>
+    </section>
+
+    <div class="form-group">
+      <label for="approval_name" class="col-sm-5 control-label">Name</label>
+      <div class="col-sm-5">
+        <%= form.text_field :approval_name, columns: 5 %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="approval_job" class="col-sm-5 control-label">Job Title
+      </label>
+      <div class="col-sm-5">
+        <%= form.text_field :approval_job_title, columns: 5 %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="approval_description" class="col-sm-5 control-label">Description
+      </label>
+      <div class="col-sm-5">
+        <%= form.text_field :approval_description %>
+      </div>
+    </div>
+
+  </fieldset>
+  <div class="tab-pane active" id="approval">
+    <a class="btn btn-primary btnPrevious">Previous</a>
+    <a class="btn btn-primary btnNext">Next</a>
+  </div>
+</div>

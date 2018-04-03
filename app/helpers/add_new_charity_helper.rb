@@ -1,0 +1,2 @@
+module AddNewCharityHelper
+end

@@ -1,0 +1,45 @@
+<div class="all-grant-upload">
+<h2 class="header-grants-upload"> Please upload your Grants Data CSV file</h2>
+
+<div class="col-sm-12 row">
+  <% flash.each do |message_type, message| %>
+  <% if (message.exclude? "don't display") %>
+  <div class="flash-grant-upload col-sm-7 col-sm-offset-2 alert alert-<%= message_type %>"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%= message %>
+
+  </div>
+  <% end %>
+<% end %>
+</div>
+
+<br>
+<br>
+
+
+
+<div class="row col-md-12">
+        <div class="flex-container">
+          <div class="template-file">
+            <div class="container-border grant-upload-btn">
+          <i class="material-icons" style="color:rgb(0,143,197);" id="download-icon">file_download</i>
+          <p class="downloadtext"> <a href="/AMRC grant data template 2018.csv" download="AMRC grant data template 2018" style="font-size:1em; color: RGB(227,111,30)" > Download the <b> CSV template file </b> here </a></p>
+          </div>
+        </div>
+
+        <div class="template-file">
+          <div class="container-border grant-upload-btn">
+        <i class="material-icons" style="color:rgb(0,143,197);" id="download-icon">help</i>
+        <p class="downloadtext"> <a href="/AMRC grant data guide.pdf" download="AMRC grant data guide 2018" style="font-size:1em; color: RGB(227,111,30)" > Need help? Download <b>instructions</b> here </a></p>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+    <div class="col-sm-12 row">
+            <%= form_tag import_grant_upload_index_path, multipart: true do %>
+              <%= file_field_tag :file, :class => 'choose-file' %>
+              <br>
+              <%= submit_tag "Upload Grants Data", :class => ''%>
+              <% end %>
+            </div>
+</div>

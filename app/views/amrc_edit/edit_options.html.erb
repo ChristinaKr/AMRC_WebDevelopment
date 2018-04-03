@@ -1,0 +1,32 @@
+
+
+
+<div class="row col-xs-12 edit-options-all">
+        <div class="flex-container">
+          <div class="template-file">
+            <div class="container-border options-box-border">
+          <i class="material-icons" style="color:rgb(0,143,197);" id="edit-icon">mode_edit</i>
+          <%= link_to('Add new organisation', new_user_registration_path, class:"edittext_options") %>
+
+          </div>
+        </div>
+
+        <div class="template-file">
+          <div class="container-border options-box-border">
+          <i class="material-icons" style="color:rgb(0,143,197);" id="edit-icon">mode_edit</i>
+          <%= link_to('Edit details of existing charity', {:controller => 'users', :action => 'index'}, class:"edittext_options") %>
+          </div>
+      </div>
+
+      <div class="template-file">
+        <div class="container-border options-box-border">
+        <i class="material-icons" style="color:rgb(0,143,197);" id="edit-icon">mode_edit</i>
+        <%= link_to('View all Data', '/admin', class:"edittext_options") %>
+        </div>
+    </div>
+
+
+
+
+      </div>
+    </div>

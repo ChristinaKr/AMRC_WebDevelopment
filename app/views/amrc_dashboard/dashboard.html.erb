@@ -1,0 +1,160 @@
+<div class="dashboard-all">
+
+<div class="row dash-info-panels">
+  <div class="col-md-3 panel-dash-left dash-panel">
+    <p>Total Research Spending =</p>
+    <span class="badge dash-num total-spen">£<%=number_with_precision((session[:rex_spending]), :precision => 0) %></span>
+  </div>
+  <div class="col-md-3 dash-panel">
+    <p>Total Estimated Research Spending = </p>
+    <span class="badge dash-num est-spen">£<%=number_with_precision((session[:rex_est_spending]), :precision => 0) %></span>
+  </div>
+  <div class="col-md-3 dash-panel">
+  <p>Total Grants Spending =</p>
+  <span class="badge dash-num grant-spend">£<%=number_with_precision((session[:grant_total]), :precision => 0) %></span>
+  </div>
+  <div class="col-md-3 dash-panel">
+  <p>Total Number of Charities = </p>
+  <span class="badge dash-num charity-num">#<%= session[:num_charities]%></span>
+  </div>
+</div>
+
+<div class="row panel-group dash-panel-group-research">
+<div class="panel panel-default col-sm-6 dashboard-half-left">
+  <div class="panel-heading pnl-hd-dash">
+    <h3 class="panel-title">Research Expenditure</h3>
+  </div>
+
+
+<% if charities_exist %>
+        <% percentage_rex = (session[:research_sub].to_f / session[:num_charities].to_f) * 100 %>
+
+        <h1 class="charities_submitted"><%= number_with_precision((percentage_rex), :precision => 1)%>% of Research Forms Submitted<h1>
+
+          <%= pie_chart [["Research Expenditure Forms Submitted", session[:research_sub]], ["Unsubmitted", (session[:num_charities] - session[:research_sub])]]%>
+          <% else %>
+          <h1 class="no-info-message-left">Chart will display when Charities are added<h1>
+          <% end %>
+
+</div>
+
+<div class="panel panel-default col-sm-6 dashboard-half-right">
+
+  <div class="panel-heading pnl-hd-dash-cat">
+    <h3 class="panel-title-cat"><b>Category</b> Information Research</h3>
+  </div>
+
+<div class="cat-data-chart">
+  <% if charities_exist %>
+  <%= bar_chart [{name: "Submitted", data: @series_a}, {name: "Unsubmitted", data: @series_b}], stacked: true %>
+  <% else %>
+  <h1 class="no-info-message-right">Chart will display when Charities are added<h1>
+  <% end %>
+</div>
+
+</div>
+
+
+
+<div class="panel panel-default col-sm-6 dashboard-half-left">
+
+  <div class="panel-heading pnl-hd-dash">
+    <h3 class="panel-title">Grants Data</h3>
+  </div>
+    <% if charities_exist %>
+  <% percentage_grants = (session[:grants_sub].to_f / session[:num_charities].to_f) * 100 %>
+
+  <h1 class="charities_submitted"><%= number_with_precision((percentage_grants), :precision => 1)%>% of Grant Data Forms Submitted<h1>
+
+  <%= pie_chart [["Grant Data Forms Submitted", session[:grants_sub]], ["Unsubmitted", (session[:num_charities] - session[:grants_sub])]]%>
+    <% else %>
+    <h1 class="no-info-message-left">Chart will display when Charities are added<h1>
+  <% end %>
+  </div>
+
+<div class="panel panel-default col-sm-6 dashboard-half-right">
+  <div class="panel-heading pnl-hd-dash-cat">
+    <h3 class="panel-title-cat"><b>Category</b> Information Grants</h3>
+  </div>
+
+  <div class="cat-data-chart">
+    <% if charities_exist %>
+  <%= bar_chart [{name: "Submitted", data: @series_c}, {name: "Unsubmitted", data: @series_d}], stacked: true %>
+  <% else %>
+  <h1 class="no-info-message-right"> Chart will display when Charities are added<h1>
+  <% end %>
+</div>
+
+</div>
+
+</div>
+
+
+<button type="button" class="btn btn-primary btn-lg col-sm-6 col-sm-offset-3 category-info-btn" data-toggle="modal" data-target="#myModal">More Category Information</button>
+
+<br>
+<br>
+<br>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Category Information</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container col-sm-10 col-sm-offset-1">
+       <table class="table table-striped">
+         <thead>
+           <tr>
+             <th>Category</th>
+             <th>Research Expenditure</th>
+             <th>Grant Expenditure</th>
+           </tr>
+         </thead>
+
+
+         <tbody>
+           <tr>
+             <td>A</td>
+             <td><%=@a_research%></td>
+             <td><%=@a_grant%></td>
+           </tr>
+           <tr>
+             <td>B</td>
+             <td><%=@b_research%></td>
+             <td><%=@b_grant%></td>
+           </tr>
+           <tr>
+             <td>C</td>
+             <td><%=@c_research%></td>
+             <td><%=@c_grant%></td>
+           </tr>
+           <tr>
+             <td>D</td>
+             <td><%=@d_research%></td>
+             <td><%=@d_grant%></td>
+           </tr>
+           <tr>
+             <td>E</td>
+             <td><%=@e_research%></td>
+             <td><%=@e_grant%></td>
+           </tr>
+         </tbody>
+
+       </table>
+     </div>
+
+     </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

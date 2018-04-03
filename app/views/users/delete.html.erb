@@ -1,0 +1,24 @@
+
+<div class="users_delete">
+<h2 class="header-delete"> Delete Charity </h2>
+
+<%= form_for(@users, :url => admin_destroy_user_path(@users), :method => 'delete') do |f| %>
+
+<p> Are you sure you want to permantly delete this charity?<div class="sublabel new-charity-sub"><em>(This will also delete all the records associated with the charity)</em></div></p>
+
+<p class="reference-name"><%= f.object.charity_name %></p>
+
+<div class="form-buttons">
+  <%= f.submit("Delete Charity", data: { confirm: "You sure?" }, class: "btn btn-danger") %>
+
+
+</div>
+
+<%= link_to("Back to Edit Charity", edit_user_path(@users), :class => 'btn-back-delete btn btn-primary col-sm-6 col-sm-offset-3') %>
+
+<% end%>
+
+
+
+
+</div>

@@ -1,0 +1,54 @@
+<div class="form-horizontal">
+  <fieldset>
+    <legend>7. Contact Details</legend>
+
+
+    <section class="col-sm-12 research_blurb">
+      <p>
+        Please supply contact details if you would like us to invoice your finance department directly;
+        and supply a purchase order number if required for invoicing.
+      </p>
+
+    </section>
+
+    <div class="form-group">
+      <label for="contact_name" class="col-sm-5 control-label">Name
+
+      </label>
+      <div class="col-sm-5">
+        <%= form.text_field :contact_name, columns: 5 %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email_research" class="col-sm-5 control-label">Email
+      </label>
+      <div class="col-sm-5">
+        <%= form.text_field :contact_email, columns: 5 %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="approval_description" class="col-sm-5 control-label">Description
+      </label>
+      <div class="col-sm-5">
+        <%= form.text_field :contact_description, columns: 5 %>
+      </div>
+    </div>
+
+<div class="form-group">
+<%= form.hidden_field :userID, :value => current_user.id%>
+</div>
+
+    <div class="form-group">
+      <div class="col-sm-8 col-sm-offset-5">
+        <%= form.submit "submit" %>
+      </div>
+    </div>
+
+  </fieldset>
+  <div class="tab-pane" id="contactdetails">
+    <a class="btn btn-primary btnPrevious col-sm-offset-3">Previous</a>
+  </div>
+
+</div>

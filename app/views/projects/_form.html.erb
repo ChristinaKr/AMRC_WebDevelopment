@@ -1,0 +1,30 @@
+<%= form_with(model: project, local: true) do |form| %>
+
+
+  <%= form_with(model: project, local: true, data: { toggle: "validator"}, class: "form-horizontal") do |form| %>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="ukresearchspending">
+        <%= render 'projects/spending_on_research', form: form %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="othercharityspending">
+        <%= render 'projects/other_charity_spending', form: form %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="totalcharitableactivities">
+        <%= render 'projects/total_charitable_activities', form: form %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="estimatedspending">
+        <%= render 'projects/estimated_spending', form: form %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="useofdata">
+        <%= render 'projects/use_of_data', form: form %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="approval">
+        <%= render 'projects/approval', form: form %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="contactdetails">
+        <%= render 'projects/contact_details', form: form %>
+      </div>
+    </div><!-- tab-content -->
+  <% end %>
+
+<% end %>

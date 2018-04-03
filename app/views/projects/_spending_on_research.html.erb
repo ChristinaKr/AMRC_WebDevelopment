@@ -1,0 +1,76 @@
+<div class="form-horizontal">
+
+  <fieldset>
+
+    <legend>1. Spending on research in the UK in 2017</legend>
+    <section class="col-sm-12 research_blurb">
+      <ul>
+        <li>This is the data that we will use to assess your subscription for 2018-19.
+        </li>
+        <li>Charities with a year end of December 2017 may submit either figures from pre-audited accounts or figures from December 2016.
+        </li>
+        <li>In all cases, we ask that the data be the next year on from the data you supplied last year. This avoids multiple declarations for the same year, and will give us a continuous time series of data, with no missing periods, that we
+          can report on behalf of the sector.
+        </li>
+      </ul>
+      <p>
+        For our purposes ‘spending on research’ (A) includes:
+      </p>
+      <ul>
+        <li> Support for medical and health related research projects and programmes including professions allied to medicine, and service-related research, including salaries, equipment, travel and support costs </li>
+        <li> Operating expenditure for units, centres, departments, research groups etc. involved in medical and health research </li>
+        <li> Fellowships, bursaries, scholarships, competitions and other awards for individuals undertaking research in medicine and other health-related areas </li>
+        <li> Grants for equipment (up to a value of £50,000) for use in medical and health research </li>
+        <li> Travel grants </li>
+        <li> Expenditure on the dissemination of medical research including publications, support or sponsorship, symposia, conferences, workshops </li>
+        <li> Administrative support costs related to medical and health research funding. </li>
+      </ul>
+    </section>
+
+    <div class="form-horizontal">
+      <div class="form-group has-feedback">
+        <%= form.label :charity_name, class: "col-sm-5 control-label", title: "Charity Name" %>
+        <div class="col-sm-5">
+          <%= form.text_field :charity_name, :value => current_user.charity_name, id: :project_charity_name, class: "form-control", columns: 5%>
+        </div>
+      </div>
+
+      <div class="form-group has-feedback">
+        <%= form.label :research_spending, class: "col-sm-5 control-label", title: "Research Spending in the UK in the financial year 2017" %>
+        <div class="col-sm-5">
+          <div class="input-group">
+            <span class="input-group-addon">£</span>
+            <%= form.text_field :research_spending, id: "research_spending", class:"form-control", placeholder: ""%>
+          </div>
+          <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+          <!--  <div class="help-block with-errors">Spending must not contain letters</div> -->
+        </div>
+      </div>
+
+      <div class="form-group has-feedback">
+        <%= form.label :financial_year, class: "col-sm-5 control-label", title: "Financial Year End" %>
+        <div class="col-sm-5">
+          <div class="input-group">
+            <%= form.text_field :financial_year, class: 'form-control', placeholder: 'MM/YY'%>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="radio-inline" class="col-sm-5 control-label">Are these figures from audited accounts</label>
+        <%= form.label :audited_account, "Yes", value: true, class: 'radio-inline' %>
+        <%= form.radio_button :audited_account, true %>
+        <%= form.label :audited_account, "No", value: false, class: 'radio-inline' %>
+        <%= form.radio_button :audited_account, false %>
+      </div>
+    </div>
+
+    <section class="footnotes">
+      <p>* Charities with a financial year end of 31 December 2017 may submit provisional figures if you have not yet been audited.</p>
+    </section>
+  </fieldset>
+
+  <div class="tab-pane active" id="ukresearchspending"><br>
+    <a class="btn btn-primary btnNext">Next</a><br><br>
+  </div>
+</div>

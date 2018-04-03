@@ -1,0 +1,38 @@
+<h2 class="choose-edit-charity"> Download Individual Research Exp. Data </h2>
+
+<div class="flash-messages">
+              <% flash.each do |flash_level, message| %>
+              <div class = "col-sm-offset-1 col-sm-10 success-messages alert alert-<%= message.include?('No') ? "danger" : "success" %> fade in">
+              <%= message %>
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              </div>
+              <% end %>
+            </div>
+
+  <div class="dropdown dorpdown-choose-edit col-sm-offset-3">
+    <button class="btn btn-primary dropdown-toggle col-sm-8 edit-drop-btn" type="button" data-toggle="dropdown">Choose Charity
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu menu-choose-edit col-sm-8">
+      <input class="form-control" id="myInput" type="text" placeholder="Search..">
+
+      <% @users.each do |charity| %>
+     <li> <%= link_to get_individual_url(:charity_id => charity.id, format: "csv") do %>
+       <%= charity.charity_name %>
+       <%end%>
+     </li>
+         <%end%>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".dropdown-menu li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

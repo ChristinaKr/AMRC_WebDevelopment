@@ -1,0 +1,64 @@
+
+<div class="flash-messages">
+              <% flash.each do |flash_level, message| %>
+              <div class = "col-sm-offset-1 col-sm-10 success-messages alert alert-<%= message.include?('Empty') ? "danger" : "success" %> fade in">
+              <%= message %>
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              </div>
+              <% end %>
+            </div>
+
+<br>
+<div class="container reports-all">
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="container-border">
+      <i class="material-icons" style="color:rgb(0,143,197);" id="download-icon">file_download</i>
+      <%= link_to get_unsubmitted_url(format: "csv"), class:"downloadtext" do %>
+      <p class="report-box-text"><b>Download list of charities yet to submit data</b></p>
+      <% end %>
+      </div>
+    </div>
+
+
+    <div class="col-xs-4">
+      <div class="container-border">
+      <i class="material-icons" style="color:rgb(0,143,197);" id="download-icon">file_download</i>
+        <%= link_to get_rex_url(format: "csv") ,class:"downloadtext" do %>
+          <p class="report-box-text"><b>Download Research Expenditure</b></p>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="col-xs-4">
+      <div class="container-border">
+        <i class="material-icons" style="color:rgb(0,143,197);" id="download-icon">file_download</i>
+      <%= link_to "<p class='report-box-text'><b>Download Grants Data</b></p>".html_safe, get_grant_data_url(format: "csv") ,class:"downloadtext"%> </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="container-border">
+    <i class="material-icons" style="color:rgb(0,143,197);" id="download-icon">file_download</i>
+    <%= link_to "<p class='report-box-text'><b>Download dashboard data</b></p>".html_safe, to_csv_dash_data_url(format: "csv") ,class:"downloadtext"%>
+    </div>
+  </div>
+
+  <div class="col-xs-4">
+    <div class="container-border">
+    <i class="material-icons" style="color:rgb(0,143,197);" id="download-icon">file_download</i>
+      <%= link_to('<p class="report-box-text"><b>Download Individual Research Data</b></p>'.html_safe, {:controller => 'amrc_reports', :action => 'research_individual'}, class: 'downloadtext')%>
+    </div>
+  </div>
+
+  <div class="col-xs-4">
+    <div class="container-border">
+      <i class="material-icons" style="color:rgb(0,143,197);" id="download-icon">file_download</i>
+        <%= link_to('<p class="report-box-text"><b>Download Individual Grant Data</b></p>'.html_safe, {:controller => 'amrc_reports', :action => 'grants_individual'}, class: 'downloadtext')%>
+    </div>
+  </div>
+  </div>
+</div>

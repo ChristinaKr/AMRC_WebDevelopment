@@ -1,0 +1,49 @@
+<div class="col-sm-12 charity-lp-page">
+
+<h3 class="landingpage-header row col-sm-12">Hello <%=current_user.charity_name%>, which data set would you like to work on?</h3>
+
+
+
+<div class="flash-messages row col-sm-4 col-sm-offset-4 lp-flash-messages">
+<% flash.each do |flash_level, message| %>
+<% if (message.include? "Research") %>
+<div class = " alert alert-<%= message.include?('wrong') ? "danger" : "success" %> fade in">
+<p><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%= message %></p>
+</div>
+<% end %>
+<% end %>
+</div>
+
+
+<div class="flex-container col-sm-12">
+  <div>
+
+
+  <div class="btn btn-squared-default btn-default">
+
+
+        <i class="material-icons" style="color:rgb(225,37,134)" id="researchexp_icon">attach_money</i>
+        <%= link_to('</br></br></br>Research </br> expenditure ' .html_safe, {:controller => 'projects', :action => 'new'}, id:"researchexp_text") %>
+    </div>
+      <% if @message == "Research Form Complete"%>
+    <p class="landing-message-left" style="color:MEDIUMSEAGREEN"> <%= @message %></p>
+    <%elsif @message == "Empty Fields On Research Form"%>
+      <p class="landing-message-left" style="color:GOLDENROD"> <%= @message %></p>
+      <%else%>
+      <p class="landing-message-left"> <%= @message %></p>
+        <%end%>
+  </div>
+
+  <div>
+    <div class="btn btn-squared-default" id="grantsdatabutton">
+        <i class="material-icons" style="color:rgb(110,25,112)" id="researchexp_icon">school</i>
+        <%= link_to('</br></br></br>Grants </br> data'.html_safe, {:controller => 'grant_upload', :action => 'grant_data'}, id:"grantsdata_text") %>
+    </div>
+    <% if session[:grants_number] == 0 %>
+    <p class="landing-message-right"><span class="badge float badge-lp-num"><%= session[:grants_number]%></span> Rows of Grant Data Submitted </p>
+    <%else%>
+    <p class="landing-message-right" style="color:MEDIUMSEAGREEN"><span class="badge float badge-lp-num"><%= session[:grants_number]%></span> Rows of Grant Data Submitted </p>
+    <%end%>
+  </div>
+</div>
+</div>

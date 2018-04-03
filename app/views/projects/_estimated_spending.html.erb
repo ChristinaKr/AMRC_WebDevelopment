@@ -1,0 +1,30 @@
+<div class="form-horizontal">
+  <fieldset>
+    <legend>4. Estimated Spending 2018</legend>
+
+    <section class="col-sm-12 research_blurb">
+      <p>
+        Please tell us what you estimate your UK research expenditure will be in 2018. This helps us identify trends in the sector.
+      </p>
+    </section>
+
+    <div class="form-group">
+      <label for="estimated_medical_research_spending" class="col-sm-5 control-label">Estimated spending on medical research in the UK for financial year ending 2018:*</label>
+      <div class="col-sm-5">
+        <div class="input-group">
+          <span class="input-group-addon">£</span>
+          <%= form.text_field :estimated_spending_on_medical_research, class: 'form-control', columns: 5 %>
+        </div>
+      </div>
+    </div>
+
+    <section class="footnotes">
+      <p>*Please submit an estimate where available, this helps us with forward planning.</p>
+    </section>
+
+  </fieldset>
+  <div class="tab-pane active" id="totalcharityspending"><br>
+  <a class="btn btn-primary btnPrevious">Previous</a>
+  <a class="btn btn-primary btnNext">Next</a>
+</div>
+</div>

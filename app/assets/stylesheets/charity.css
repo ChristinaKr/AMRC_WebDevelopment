@@ -1,0 +1,431 @@
+/* Global styles
+------------------------------------*/
+body {
+  font:13px/1.5 Verdana,Helvetica,Arial,sans-serif;
+  color: #6d6f71;
+  background-color: white;
+  margin: 0;
+  height: 100%;
+}
+html {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  height: 100%;
+}
+a {
+  font-style: bold;
+  padding: 10px;
+}
+a:hover {
+  color: rgb(227,111,30);
+}
+.content-wrap {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 5px;
+}
+.wrapperforstickyfooter {
+  min-height: 100%;
+  margin-bottom: -60px;
+}
+.push{
+  height:60px
+}
+
+/* Header & Footer */
+
+header, footer {
+  background-color: rgb(0,143,197);
+  line-height:150%;
+  font-weight: normal;
+}
+.logout-template-btn {
+  color: white;
+}
+.footer-link {
+  color: white;
+}
+
+/* Header */
+.logo {
+  width: 250px;
+  margin-left:-30px;
+}
+.contactLogin {
+  margin-top:25px;
+}
+header{
+  font: 120% "Century Gothic", Verdana, sans-serif;
+  margin-bottom: 40px;
+  text-align: left;
+  font-weight:normal;
+}
+.templateBtnToolbar {
+  background-color: rgb(0,143,197);
+  color: white;
+  border-color: rgb(0,143,197);
+  font-weight: normal;
+}
+.templateBtnToolbar:hover {
+  background-color: rgb(0,143,197);
+  color: rgb(227,111,30);
+  border-color: rgb(0,143,197);
+}
+
+/* Footer */
+footer {
+  height: 60px;
+  color: white;
+  text-align: justify;
+  padding-bottom:15px;
+}
+
+/* Individual pages
+------------------------------------*/
+
+/**** Login/ log in Page ****/
+
+h1{
+  font-size: 2em;
+  font-style: normal;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+.description{
+  font-size: 1em;
+  line-height: 1.5;
+  text-align: center;
+  width: 1100px;
+  margin: auto;
+}
+.heading {
+  font-size: 2.5em;
+  margin-top: -10px;
+}
+.header-login {
+  height: 200px;
+}
+.db-login {
+  height: 150px;
+}
+
+/**** Dashboard Charity Member ****/
+
+.button-group{
+  display:flex;
+  position:absolute;
+  right:7%;
+  top:100px;
+}
+.buttonDB, .buttonREP, .buttonEDIT {
+  background: rgb(234,235,235);
+  color: rgb(109,111,113);
+  text-decoration: none;
+  height: 50px;
+  width: 180px;
+  display: inline-block;
+  text-align: center;
+  border-top: 8px solid rgb(227,111,30);
+  position:relative;
+  right:40px;
+  top:20px;
+  font:13px/1.5 Verdana,Helvetica,Arial,sans-serif;
+  margin-right: 5px;
+}
+.buttonREP {
+  border-top: 8px solid rgb(225,37,134);
+}
+.buttonEDIT {
+  border-top: 8px solid rgb(110,25,112);
+}
+.buttonDB:hover{
+  background-color: rgb(252,244,237);
+  color: rgb(215,117,54);
+  cursor: pointer;
+}
+.buttonREP:hover{
+  background-color: rgb(252,244,246);
+  color: rgb(208,61,132);
+  cursor: pointer;
+}
+.buttonEDIT:hover{
+  background-color: rgb(238,235,242);
+  color: rgb(100,37,108);
+  cursor: pointer;
+}
+.dash-data {
+  max-height: 400px;
+  width: 95%;
+  margin: auto;
+}
+.research-data {
+  float:left;
+  width:60%;
+  height: 190px;
+  background-color:darkgray;
+}
+.grant-data {
+  background-color:darkgray;
+  float:left;
+  width: 60%;
+  height: 190px;
+}
+.dash-subtitle {
+  color: black;
+  font-size: 150%;
+  margin: 1%;
+  border: 1%;
+}
+.key-statistics {
+  float:right;
+  width:39%;
+  height:300px;
+  background-color:darkgray;
+}
+.dash-info {
+  font-size: 100%;
+  text-align: center;
+}
+.data-pie {
+  float: left;
+  width: 50%;
+  background-color: lightgray;
+  height: 90%;
+}
+.category-chart {
+  float: right;
+  width: 50%;
+  background-color: lightgray;
+  height: 90%;
+}
+.stats-info {
+  font-size: 50%;
+  text-align: center;
+  background-color: lightgray;
+  width: 95%;
+  height: 5%;
+  margin: auto;
+}
+.stat {
+  color: orange;
+  font-size: 2.5em;
+  text-align: center;
+  margin: auto;
+  background-color: lightgray;
+  width: 95%;
+}
+
+/**** Reports/ Download Page for Admin ****/
+
+.downloadtext{
+  font: 13px Verdana,Helvetica,Arial,sans-serif;
+  color: RGB(112,112,112);
+  font-size:18px;
+  text-align:center;
+  padding: 5px;
+}
+.downloadtext:hover,.edittext:hover{
+  color: rgb(227,111,30);
+  cursor: pointer;
+}
+#download-icon{
+  font-size:80px;
+}
+#edit-icon{
+  font-size:50px;
+  padding:10px;
+}
+.edittext{
+  font: 13px Verdana,Helvetica,Arial,sans-serif;
+  color: RGB(112,112,112);
+  font-size:18px;
+  text-align:center;
+  padding: 5px;
+  font-weight:bold;
+}
+.container-border{
+  border-style:solid; /* or ridge? */
+  border-color: rgb(0,143,197);
+  border-width:3px;
+  padding: 5px;
+  min-height:120px;
+  display:flex;
+  align-items:center;
+  margin-top: 10px;
+}
+
+/**** Research Expenditure Form for Charity ****/
+
+.fa {
+  background-color: rgb(0,143,197);
+}
+
+.error-messages {
+  font-size: 15px;
+}
+.edit_research_button {
+  margin-bottom: 20px;
+  color: black;
+}
+.research_blurb {
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: whitesmoke;
+  margin-bottom: 20px;
+}
+.radio-auditing {
+  background-color: lightgray;
+  margin-left: 30px;
+}
+.form-blurb {
+  text-align: left;
+  font-size: 15px;
+  margin-top: 0px;
+}
+.research-sub-title {
+  color: lightgray;
+  color: rgb(0,143,197);
+}
+.research-submit {
+  margin-top: 10px;
+}
+.footnotes {
+  font-size: 0.75em;
+}
+.sublabel {
+  font-size: 0.75em;
+  color: slategray;
+}
+/* Next and previous button */
+.tab-content .btnNext, .tab-content .btnPrevious{
+  position: static;
+  bottom: 10px;
+  background-color: rgb(0,143,197);
+}
+.btnNext {
+  float: right;
+}
+/* Position of next button, afterwards for previous button */
+.tab-content .btnNext{
+  right: 10px;
+}
+.tab-control .previous-button {
+  left: 10%;
+}
+/* Color of navigational text*/
+.nav-pills a{
+  color: rgb(0,143,197);
+}
+/* Eventhandler colors for navigational sidebar */
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #ffffff;
+  background-color: rgb(0,143,197);
+}
+
+#test{
+  /* right: 20px; */
+}
+
+/**** UploadGrantData ****/
+
+.template-file {
+  width: 300px !important;
+  height: 150px !important;
+}
+.all-grant-upload {
+  text-align: center;
+  height:100%;
+  overflow: auto;
+}
+.choose-file {
+  margin-left: 41%;
+}
+.flash-grant-upload {
+  margin-left: 25%;
+}
+.header-grants-upload {
+  margin-bottom: 30px;
+  padding-right: 30px;
+}
+.grant-upload-downloads {
+  margin-bottom: 20px;
+}
+.submit-upload-grants {
+  margin-bottom: 10px;
+  background-color: rgb(0,143,197);
+}
+
+/**** Charity Landing Page *****/
+
+.link_to_edit {
+  color: blue;
+}
+.btn-squared-default
+{
+  width: 200px !important;
+  height: 150px !important;
+  font-size: 20px;
+  border-color:rgb(225,37,134);
+  background-color: white;
+  color: black;
+}
+#grantsdatabutton{
+  border-color: rgb(110,25,112);
+}
+.btn-squared-default:hover{
+  border: 3px solid rgb(225,37,134);
+  font-weight: 800;
+}
+#researchexp_icon{
+  font-size: 70px;
+  float:right;
+  position: relative;
+  right:30%;
+}
+#researchexp_text, #grantsdata_text {
+  color:black;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.flex-container>div {
+  padding:10px;
+}
+.landing-message-right {
+  width: 190px;
+  text-align: center;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+.landing-message-left {
+  width: 150px;
+  text-align: center;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+.landingpage-header {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  padding-left: 55px;
+}
+.badge-lp-num {
+  float: right;
+  font-size: 30px;
+  background-color: DARKGREY;
+}
+.charity-lp-page {
+  margin-top: 0px;
+  height: 330px;
+  overflow: auto;;
+}
+.lp-flash-messages {
+  margin-bottom: 0;
+  margin-top: 0;
+}

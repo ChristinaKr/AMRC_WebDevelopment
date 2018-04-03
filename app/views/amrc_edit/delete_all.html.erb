@@ -1,0 +1,23 @@
+<div class="users_delete">
+<h2 class="header-delete"> Delete Records </h2>
+
+
+
+<p> Are you sure you want to permantly all records in the database?<div class="sublabel new-charity-sub"><em>(All records will be permanently deleted)</em></div></p>
+
+<p class="reference-name"></p>
+
+<div class="form-buttons">
+  <%= link_to("Delete", delete_all_records_url, :class => 'btn btn-danger') %>
+
+
+</div>
+
+<%= link_to("Back to Edit Charity", {:controller => 'amrc_edit', :action => 'edit_options'}, :class => 'btn-back-delete btn btn-primary col-sm-6 col-sm-offset-3') %>
+
+
+
+
+
+
+</div>

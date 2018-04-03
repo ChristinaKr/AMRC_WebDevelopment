@@ -1,0 +1,58 @@
+<div class="form-horizontal">
+  <fieldset>
+    <legend>5. Use of Data</legend>
+    <section class="col-sm-12 research_blurb">
+      <ul>
+        <li>We showcase charitable activities and spending on research <a href="http://www.amrc.org.uk/our-members/member-directory">here</a></li>
+        <li>Please use this form to give approval (or ongoing approval if you already provided this at the time of website refresh) to publish the information in sections 1 and 2 as charts in your charity’s profile on the site.</li>
+        <li> If you would like to add some information about your charity’s activities to accompany the charts please add a continuation page to this document and provide us with the additional text.</li>
+      </ul>
+      <p>(Scroll down in this box for more information)</p>
+      <br>
+      <p>
+        <ul>
+          <li> This year we are also asking for approval for us to share this year’s and past figures with other people or organisations. </li>
+          <li> If you agree then this research expenditure data will be combined with the figures from other permitting charities and will be sent out to help with any enquiries. </li>
+          <li> Many charities find this information useful to understand which charities are of a similar size and where they fit in the research funding landscape. </li>
+          <li> The data should already be openly available on the individual charity sections on the charity commission website and on our AMRC website but this will allow us to collate it all together for ease in answering queries. </li>
+        </ul>
+
+    </section>
+
+    <div class: "form-group">
+      <label for="use_of_data_approve_graphs" class="col-sm-5 control-label">I approve publication of research expenditure graphs on the AMRC website (Y/N)*</label>
+      <%= form.label :use_of_data_approve_graphs, value: true, class: 'radio-inline' do %>
+        <%= form.radio_button :use_of_data_approve_graphs, true %>
+        Yes
+      <% end %>
+      <%= form.label :use_of_data_approve_graphs, value: false, class: 'radio-inline' do %>
+        <%= form.radio_button :use_of_data_approve_graphs, false %>
+        No
+      <% end %>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class: "form-group">
+      <label for="radio-inline" class="col-sm-5 control-label">I permit AMRC to share these and past research expenditure figures with any person or organisation that requests them (Y/N)</label>
+      <%= form.label :use_of_data_share_aggreement, value: true, class: 'radio-inline' do %>
+        <%= form.radio_button :use_of_data_share_aggreement, true %>
+        Yes
+      <% end %>
+      <%= form.label :use_of_data_share_aggreement, value: false, class: 'radio-inline' do %>
+        <%= form.radio_button :use_of_data_share_aggreement, false %>
+        No
+      <% end %>
+
+    </div>
+    <section class="footnotes col-sm-12">
+      <p>*Graphs can be displayed with additional text upon request.</p>
+    </section>
+
+  </fieldset>
+  <div class="tab-pane active" id="useofdata"><br>
+  <a class="btn btn-primary btnPrevious col-sm-offset-3">Previous</a>
+  <a class="btn btn-primary btnNext">Next</a><br><br>
+</div>
+</div>

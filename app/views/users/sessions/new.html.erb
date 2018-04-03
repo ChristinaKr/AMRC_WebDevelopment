@@ -1,0 +1,44 @@
+<% @page_title = "Login" %>
+<div class"login-flass-container col-sm-12">
+  <div class="flash-messages row col-sm-4 col-sm-offset-4 lp-flash-messages">
+    <% flash.each do |flash_level, message| %>
+    <% if message.include? "Invalid Email or password." %>
+    <div class = "flash-login alert alert-danger fade in">
+      <%= message %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="content-wrap"><section class="description">
+  <div class="container col-sm-12">
+    <p class="loginDescription">TESTWelcome to the AMRC annual data collection tool. You can use this tool to submit the research expenditure
+      and grants data requested by AMRC. Use of this tool helps AMRC improve the efficiency of the data collection, however if you would
+      prefer to send in your data via email as in previous years, please let us know and we are happy to provide you with the forms. If
+      you have any queries please don’t hesitate to get in touch with Jocelyn through<a class="loginContact" href="j.leblanc@amrc.org.uk">j.leblanc@amrc.org.uk!</a></p>
+    </div>
+  </section>
+  <div class="container">
+    <div class="login-btns-input col-sm-12">
+      <h2 class="loginHeader">Login</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, class: "login-input"%>
+      </div><br>
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off", class: "login-input" %>
+      </div>
+      <br>
+      <div class="actions submit-btn-login">
+        <%= f.submit "Log in", :class => "btn btn-primary btn-login-bootstrap"%>
+      </div>
+      <% end %>
+      <div class="forgot-password-link">
+        <%= render "users/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
